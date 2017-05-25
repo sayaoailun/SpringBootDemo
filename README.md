@@ -48,6 +48,8 @@ UI工程的入口为
 
 > [SpringBootDemo](https://github.com/sayaoailun/SpringBootDemo)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo)/[UI](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI)/[src](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src)/[main](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main)/[java](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java)/[com](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com)/[dc](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc)/[springboot](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot/demo)/[ui](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot/demo/ui)/[main](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot/demo/ui/main)/**Main.java**
 
+------
+
 也可以通过pom文件打包成jar包，使用脚本启动
 
 Backend工程的启动脚本为linux下的shell脚本，目录为
