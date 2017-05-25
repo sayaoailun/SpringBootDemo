@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="angular-1.0.1.min.js"></script>
+    <script>
+    var m1=angular.module('myApp',[]);
+    m1.controller('Aaa',['$scope','$http',function($scope,$http){
+    	/*$http({
+    		method:'get',
+    		url:'a.php'
+    	}).success(function(data,state,headers,config){
+            console.log(data);
+            console.log(state);
+            console.log(headers);
+            console.log(config);
+    	}).error(function(data){
+    		console.log('error')
+    	})*/
+    	
+        // 代理请求
+        $http.get('user/users').success(function(data,state,headers,config){
+        	$scope.users = data;
+            console.log(data);
+            console.log(state);
+            console.log(headers);
+            console.log(config);
+    	})
+    }])
+	
+    
+    </script>
+</head>
+<body>
+<div ng-controller="Aaa">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr ng-repeat="x in users">
+            <td>{{ x.name }}</td>
+            <td>{{ x.age }}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+<!-- 
+$http ( 类似于jQuery的ajax )
+接收一个对象 {}
+配置参数：
+->method：get/post
+->url
+
+链式操作
+->success 
+->error  
+
+success 参数
+
+第一个参数：接收的数据data
+第二个参数:状态
+第三个参数：头部信息
+第四个参数：config信息
+
+$http({
+   method:'GET',
+   url:'a.php'
+}).success(function(data){
+
+}).error(function(){
+})
+
+简写：
+
+$http.get('a.php').success(function(){
+	
+})
+
+ -->
