@@ -7,7 +7,11 @@
 
 ## 2 使用Java IDE导入maven工程
 
-导入工程`demo`和`Backend`
+导入工程
+
+- `demo`
+- `Backend`
+- `UI`
 
 ## 3 配置数据库
 
@@ -22,14 +26,34 @@ druid.password=root
 ```
 此三项配置改为实际的数据库配置
 
-## 4 启动工程
+## 4 配置UI工程的依赖
+
+修改以下文件
+
+> [SpringBootDemo](https://github.com/sayaoailun/SpringBootDemo)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo)/[UI](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI)/[src](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src)/[main](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main)/[resources](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/resources)/**application.properties**
+
+```properties
+backend_url=http://localhost:8080/backend
+```
+
+此项配置改为实际的Backend的地址
+
+## 5 启动工程
 
 Backend工程的入口为
 
 > [SpringBootDemo](https://github.com/sayaoailun/SpringBootDemo)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo)/[Backend](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend)/[src](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src)/[main](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main)/[java](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main/java)/[com](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main/java/com)/[dc](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main/java/com/dc)/[springboot](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main/java/com/dc/springboot)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main/java/com/dc/springboot/demo)/[backend](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main/java/com/dc/springboot/demo/backend)/[main](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend/src/main/java/com/dc/springboot/demo/backend/main)/**Main.java**
+
+UI工程的入口为
+
+> [SpringBootDemo](https://github.com/sayaoailun/SpringBootDemo)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo)/[UI](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI)/[src](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src)/[main](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main)/[java](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java)/[com](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com)/[dc](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc)/[springboot](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot/demo)/[ui](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot/demo/ui)/[main](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI/src/main/java/com/dc/springboot/demo/ui/main)/**Main.java**
 
 也可以通过pom文件打包成jar包，使用脚本启动
 
 Backend工程的启动脚本为linux下的shell脚本，目录为
 
 > [SpringBootDemo](https://github.com/sayaoailun/SpringBootDemo)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo)/[Backend](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/Backend)/**bin**/
+
+UI工程的启动脚本为linux下的shell脚本，目录为
+
+> [SpringBootDemo](https://github.com/sayaoailun/SpringBootDemo)/[demo](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo)/[UI](https://github.com/sayaoailun/SpringBootDemo/tree/master/demo/UI)/**bin**/
