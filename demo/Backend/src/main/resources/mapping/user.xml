@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	<insert id="insert" parameterType="java.util.Map">
+		insert into user(id, name, age)
+		values (#{id},#{name},#{age})
+	</insert>
+	
+	<insert id="multiInsert" parameterType="java.util.Map">
+		insert into user(id, name, age)
+		values
+		<foreach collection="users" index="index" item="item" open="" separator="," close="">
+            (#{item.id},#{item.name},#{item.age})
+        </foreach>
+	</insert>
+	
+	<update id="update" parameterType="java.util.Map">
+		update user
+		<set>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="age != null">
+				age = #{age}
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<select id="select" parameterType="java.util.Map" resultType="java.util.HashMap">
+		select *
+		from user
+		<where>
+			<if test="name != null">
+				name like concat('%',#{name},'%')
+			</if>
+			<if test="age != null">
+				and age = #{age}
+			</if>
+		</where>
+	</select>
+	
+	<delete id="delete" parameterType="java.util.Map">
+		delete from user
+		<where>
+			<if test="id != null">
+				id = #{id}
+			</if>
+			<if test="name != null">
+				and name = #{name}
+			</if>
+			<if test="age != null">
+				and age = #{age}
+			</if>
+		</where>
+	</delete>
+	
+	<delete id="multiDelete" parameterType="java.lang.String">
+		delete from user
+		where id in
+		<foreach collection="array" index="index" item="item" open="(" separator="," close=")">
+    		#{item}
+    	</foreach>
+	</delete>
+	
+</mapper>
